@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra cách cạnh tam giác</title>
+</head>
+<h1 style="color:brown;">Kiểm tra 3 số có phải cạnh của tam giác hay không</h1>
+<body>
+<br> Nhập số 1 <input type="number" id="so1" placeholder="Nhập số 1" > </br>
+<br> Nhập số 2 <input type="number" id="so2" placeholder="Nhập số 2" > </br>
+<br> Nhập số 3 <input type="number" id="so3" placeholder="Nhập số 3" > </br>
+<br>
+<button style="width:130px; height:30px" onclick="Check()"> Kiểm tra </button>
+<p id="kq"> Kết quả là: </p>
+
+</body>
+<script>
+    function Check() {
+        let so1 = +document.getElementById("so1").value
+        let so2 = +document.getElementById("so2").value
+        let so3 = +document.getElementById("so3").value
+        if (so1<=0||so2<=0||so3<=0){
+            document.getElementById("kq").innerHTML = "Cạnh của tam giác phải lớn hơn 0" ;
+        }
+        else if (so1+so2>so3 && so1+so3>so2 &&so2+so3>so1){
+            document.getElementById("kq").innerHTML = so1+"; "+so2+"; "+so3+" là 3 cạnh của tam giác" ;
+        }
+        else {
+            document.getElementById("kq").innerHTML = so1+"; "+so2+"; "+so3+" không phải là 3 cạnh của tam giác";
+        }
+    }
+</script>
+</html>
